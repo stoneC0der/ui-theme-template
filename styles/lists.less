@@ -26,6 +26,9 @@
   .selected {
     color: @text-color-selected;
   }
+  .list-item:hover {
+    background-color: darken(@base-background-color, 5%);
+  }
 }
 
 
@@ -96,5 +99,11 @@
   &.select-list.popover-list .suggestion-description {
     background-color: lighten(@base-background-color, 10%);
     color: lighten(@text-color, 2%);
+  }
+}
+
+.structure-view {
+  .vertical-menu a:hover, .vertical-menu label:hover {
+    background-color: darken(@base-background-color, 5%);
   }
 }
