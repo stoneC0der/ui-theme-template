@@ -5,9 +5,9 @@
 // Displays selectable tabs above the editor.
 // Overrides: atom/tabs
 
-.tab-bar {
+atom-workspace-axis .tab-bar {
   background-color: @tab-bar-background-color;
-  border-bottom: 1px solid @base-border-color;
+  box-shadow: 15px 2px 10px -5px HSLA(201, 12%, 47%,0.50);
 
   .tab {
     color: @text-color;
@@ -16,11 +16,12 @@
     font-size: @font-size;
     border-right: 1px solid @tab-border-color;
     background-color: @tab-background-color;
+    // border-radius: 4px;
     &.active {
       color: @text-color-selected;
       background-color: @tab-background-color-active;
+      border-left: 2px solid #25bedd;
     }
-
 
     // Modified Icon (the circle) -------------------
     &.modified:not(:hover) .close-icon {
@@ -46,12 +47,18 @@
     // Dragging -------------------
     // Styles get applied while dragging a tab
     &.is-dragging {
-      background: darken(@tab-background-color, 10%);
+      background: darken(@tab-background-color, 1%);
       border-color: transparent;
       opacity: .5;
       & .close-icon {
         visibility: hidden;
       }
     }
+  }
+  .texteditor.tab.active {
+    color: @text-color-selected;
+    background-color: @tab-background-color-active;
+    border: none;
+    border-bottom: 2px solid #25bedd;
   }
 }

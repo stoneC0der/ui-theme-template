@@ -4,9 +4,14 @@
 
 // Overrides: atom/atom/static/buttons.less
 
-
+button, input, optgroup, select, textarea {
+  color: lighten(@text-color, 10%);
+}
 .btn {
-  color: lighten(@text-color, 6%);
+  color: @button-color;
+  font-weight: 600;
+  border-radius: 4px;
+  margin: 3px;
   background-color: @button-background-color;
   &:hover,
   &:focus {
@@ -20,11 +25,19 @@
   &.selected {
     color: @text-color-selected;
     background-color: @button-background-color-selected;
+    &:hover {
+      background-color: lighten(@button-background-color-selected, 90%);
+      color: @text-color;
+    }
   }
   &:focus,
   &:focus:active {
     outline: none;
   }
+}
+
+.input-toggle:before {
+  background-color: @base-background-color;
 }
 
 

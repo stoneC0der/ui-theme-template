@@ -57,3 +57,44 @@
     }
   }
 }
+
+.suggestion {
+  &-list-scroller {
+    .character-match {
+      color: lighten(@text-color, 5%);
+      font-weight: 900;
+    }
+  }
+}
+.autocomplete-suggestion-list {
+  .icon.property,
+  .icon.tag,
+  .icon.selector {
+    color: @text-color;
+    background-color: @base-background-color;
+  }
+  .icon.move-right,
+  .icon.snippet {
+    color: green;
+  }
+  &.select-list.popover-list ol.list-group li {
+    .word{
+        color: darken(@text-color, 5%);
+    }
+    &.selected {
+      .word{
+         color: darken(@text-color-selected, 15%);
+       }
+     .character-match {
+        color: darken(@text-color-selected, 5%);
+      }
+      .right-label {
+        color: darken(@text-color, 5%);
+      }
+    }
+  }
+  &.select-list.popover-list .suggestion-description {
+    background-color: lighten(@base-background-color, 10%);
+    color: lighten(@text-color, 2%);
+  }
+}
